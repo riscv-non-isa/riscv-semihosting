@@ -1,0 +1,83 @@
+= RISC-V Semihosting
+Keith Packard <keith.packard@sifive.com>
+:title-logo-image: image:Semifreddo_dessert.jpg[Semifreddo desert]
+:version: 0.1
+:revnumber: v{version}
+:revdate: 1 Jan 1970
+:icons:
+:icontype: svg
+:copyright: Keith Packard 2020
+:doctype: article
+:numbered:
+
+[colophon]
+[%nonfacing]
+== License
+
+Copyright © 2020 {author}
+
+This document is released under a Creative Commons Attribution 4.0
+International License.
+
+[abstract]
+== Abstract
+
+Semihosting is a technique where an application running in a debug or
+simulation environment can access elements of the system hosting the
+debugger or simulator including console, file system, time and other
+functions. This allows for diagnostics, interaction and measurement of
+a target system without requiring significant infrastructure to exist
+in that target environment.
+
+== RISC-V Semihosting
+
+RISC-V semihosting borrows from the design of the ARM semihosting
+mechanism to minimize the development effort required. The RISC-V
+semihosting is based on the "Semihosting for AArch32 and AArch64:
+Release 2.0" specification available here:
+
+	https://static.docs.arm.com/100863/0200/semihosting.pdf
+
+Referring to Chapter Three in that document, the following extensions
+are needed to provide RISC-V support.
+
+=== Semihosting Trap Instruction Sequence
+
+Semihosting operations are requested using a sequence of instructions
+including EBREAK. Because the RISC-V base ISA does not provide more than
+one EBREAK instruction, RISC-V semihosting uses a special sequence of
+instructions to distinguish a semihosting EBREAK from a debugger
+inserted EBREAK. <<trap>> shows the instruction sequence used to
+invoke a Semihosting operation.
+
+.RISC-V Semihosting Trap Sequence
+[#trap]
+----
+slli x0, x0, 0x1f       # 0x01f01013    Entry NOP
+ebreak                  # 0x00100073    Break to debugger
+srai x0, x0, 7          # 0x40705013    NOP encoding the semihosting call number 7
+----
+
+These three instructions must be 32-bit-wide instructions, they may
+not be compressed 16-bit instructions. This same sequence is used on
+all RISC-V architectures. On systems with paging support, this
+sequence must not cross a page boundary as the semihosting system must
+be able to check for the semihosting sequence without needing data
+from potentially missing pages.
+
+=== Semihosting Register Definitions
+
+<<register>> shows the specific registers that are used, and the size of
+the fields in the data block, which depend on whether the caller is
+32-bit or 64-bit.
+
+.RISC-V Registers and field size
+[#register]
+[cols="3,^1,^1"]
+|===
+|                                   | 32-bit | 64-bit
+| OPERATION NUMBER REGISTER         |  A0    |   A0  
+| PARAMETER REGISTER                |  A1    |   A1  
+| RETURN REGISTER                   |  A0    |   A0  
+| Data block field size             | 32 bits| 64 bits
+|===
