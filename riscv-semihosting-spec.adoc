@@ -1,12 +1,11 @@
 = RISC-V Semihosting
-Keith Packard <keith.packard@sifive.com>
+Krste Asanovic <krste@sifive.com>; Palmer Dabbelt <palmer@dabbelt.com>; Liviu Ionescu <ilg@livius.net>; Keith Packard <keith.packard@sifive.com>; Megan Wachs <megan@sifive.com>
 :title-logo-image: image:Semifreddo_dessert.jpg[Semifreddo desert]
 :version: 0.1
 :revnumber: v{version}
 :revdate: 1 Jan 1970
 :icons:
 :icontype: svg
-:copyright: Keith Packard 2020
 :doctype: article
 :numbered:
 
@@ -14,7 +13,7 @@ Keith Packard <keith.packard@sifive.com>
 [%nonfacing]
 == License
 
-Copyright © 2020 {author}
+Copyright © 2020 {authors}
 
 This document is released under a Creative Commons Attribution 4.0
 International License.
