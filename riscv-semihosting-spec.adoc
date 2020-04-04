@@ -1,6 +1,7 @@
 = RISC-V Semihosting
 Krste Asanovic <krste@sifive.com>; Palmer Dabbelt <palmer@dabbelt.com>; Liviu Ionescu <ilg@livius.net>; Keith Packard <keith.packard@sifive.com>; Megan Wachs <megan@sifive.com>
 :title-logo-image: image:Semifreddo_dessert.jpg[Semifreddo desert]
+:title-page:
 :version: 0.1
 :revnumber: v{version}
 :revdate: 1 Jan 1970
@@ -62,7 +63,24 @@ not be compressed 16-bit instructions. This same sequence is used on
 all RISC-V architectures. On systems with paging support, this
 sequence must not cross a page boundary as the semihosting system must
 be able to check for the semihosting sequence without needing data
-from potentially missing pages.
+from potentially missing pages. <<function>> shows how this can be done
+by placing the sequence in a separate function and aligning that to
+prevent that from spanning a page boundary.
+
+.RISC-V Semihosting Trap Function
+[#function]
+----
+        .option norvc
+        .text
+        .align 16
+        .global sys_semihost
+        .type sys_semihost @function
+sys_semihost:
+        slli zero, zero, 0x1f
+        ebreak
+        srai zero, zero, 0x7
+        ret
+----
 
 === Semihosting Register Definitions
 
