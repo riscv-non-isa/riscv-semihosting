@@ -11,8 +11,8 @@ ADOC_FILES=riscv-semihosting-spec.adoc
 PDF_FILES=$(ADOC_FILES:.adoc=.pdf)
 HTML_FILES=$(ADOC_FILES:.adoc=.html)
 
-SPEC_VERSION = 0.1
-SPEC_DATE = 2020-03-07
+SPEC_VERSION = 0.2
+SPEC_DATE = 2020-04-05
 
 ATTRIBUTES=-B. --attribute="revdate=$(SPEC_DATE)" --attribute="version=$(SPEC_VERSION)"
 

@@ -2,9 +2,9 @@
 Krste Asanovic <krste@sifive.com>; Palmer Dabbelt <palmer@dabbelt.com>; Liviu Ionescu <ilg@livius.net>; Keith Packard <keith.packard@sifive.com>; Megan Wachs <megan@sifive.com>
 :title-logo-image: image:Semifreddo_dessert.jpg[Semifreddo desert]
 :title-page:
-:version: 0.1
+:version: 0.2
 :revnumber: v{version}
-:revdate: 1 Jan 1970
+:revdate: 5 Apr 2020
 :icons:
 :icontype: svg
 :doctype: article
