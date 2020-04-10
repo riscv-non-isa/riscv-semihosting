@@ -72,7 +72,7 @@ prevent that from spanning a page boundary.
 ----
         .option norvc
         .text
-        .align 16
+        .balign 16
         .global sys_semihost
         .type sys_semihost @function
 sys_semihost:
