@@ -36,7 +36,7 @@ mechanism to minimize the development effort required. The RISC-V
 semihosting is based on the "Semihosting for AArch32 and AArch64:
 Release 2.0" specification available here:
 
-	https://static.docs.arm.com/100863/0200/semihosting.pdf
+	https://developer.arm.com/documentation/100863/0200/
 
 Referring to Chapter Three in that document, the following extensions
 are needed to provide RISC-V support.
