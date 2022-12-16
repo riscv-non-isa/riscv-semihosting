@@ -34,15 +34,9 @@ in that target environment.
 
 == RISC-V Semihosting
 
-RISC-V semihosting borrows from the design of the ARM semihosting
-mechanism to minimize the development effort required. The RISC-V
-semihosting is based on the "Semihosting for AArch32 and AArch64"
-specification available here:
-
-	https://github.com/ARM-software/abi-aa/blob/main/semihosting/semihosting.rst
-
-Referring to Chapter Three in that document, the following extensions
-are needed to provide RISC-V support.
+RISC-V semihosting borrows from the design of other publicly available
+and open source semihosting mechanisms to minimize the development
+effort required.
 
 === Semihosting Trap Instruction Sequence
 
