@@ -12,6 +12,9 @@ Krste Asanovic <krste@sifive.com>; Palmer Dabbelt <palmer@dabbelt.com>; Liviu Io
 
 [colophon]
 [%nonfacing]
+== Introduction
+This is a Discussion Document: Assume everything can change. This document is not complete yet and was created only for the purpose of conversation outside of the document. See http://riscv.org/spec-state for more details.
+
 == License
 
 Copyright © 2020 {authors}
