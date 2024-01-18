@@ -1,37 +1,3 @@
-= RISC-V Semihosting
-Krste Asanovic <krste@sifive.com>; Palmer Dabbelt <palmer@dabbelt.com>; Liviu Ionescu <ilg@livius.net>; Keith Packard <keith.packard@sifive.com>; Megan Wachs <megan@sifive.com>
-:title-logo-image: image:Semifreddo_dessert.jpg[Semifreddo desert]
-:title-page:
-:version: 0.2
-:revnumber: v{version}
-:revdate: 5 Apr 2020
-:icons:
-:icontype: svg
-:doctype: article
-:numbered:
-
-[colophon]
-[%nonfacing]
-== Introduction
-This is a Discussion Document: Assume everything can change. This document is not complete yet and was created only for the purpose of conversation outside of the document. See http://riscv.org/spec-state for more details.
-
-== License
-
-Copyright © 2020 {authors}
-
-This document is released under a Creative Commons Attribution 4.0
-International License.
-
-[abstract]
-== Abstract
-
-Semihosting is a technique where an application running in a debug or
-simulation environment can access elements of the system hosting the
-debugger or simulator including console, file system, time and other
-functions. This allows for diagnostics, interaction and measurement of
-a target system without requiring significant infrastructure to exist
-in that target environment.
-
 == RISC-V Semihosting
 
 RISC-V semihosting borrows from the design of other publicly available

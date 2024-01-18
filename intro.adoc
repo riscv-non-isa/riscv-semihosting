@@ -1,0 +1,11 @@
+[[intro]]
+== Introduction
+
+Semihosting is a technique where an application running in a debug or
+simulation environment can access elements of the system hosting the
+debugger or simulator including console, file system, time and other
+functions. This allows for diagnostics, interaction and measurement of
+a target system without requiring significant infrastructure to exist
+in that target environment.
+
+
