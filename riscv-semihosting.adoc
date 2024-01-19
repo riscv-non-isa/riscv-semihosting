@@ -59,8 +59,10 @@ Copyright 2024 by RISC-V International.
 include::contributors.adoc[]
 
 include::intro.adoc[]
-include::semihosting.adoc[]
+
+include::binary-interface.adoc[]
 
 // The index must precede the bibliography
 include::index.adoc[]
+
 include::bibliography.adoc[]

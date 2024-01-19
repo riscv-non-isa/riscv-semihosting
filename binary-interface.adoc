@@ -1,0 +1,71 @@
+== RISC-V Semihosting Binary Interface
+
+The RISC-V semihosting binary interface consist of a trap instruction
+sequence and mechanism to pass parameters which are defined by the
+following sub-sections.
+
+=== Semihosting Trap Instruction Sequence
+
+Semihosting operations are requested using a sequence of instructions
+including `ebreak`. Because the RISC-V base ISA does not provide more than
+one `ebreak` instruction, RISC-V semihosting uses a special sequence of
+instructions to distinguish a semihosting `ebreak` from a debugger inserted
+`ebreak`. The <<trap>> shows the instruction sequence used to invoke a
+Semihosting operation.
+
+.RISC-V Semihosting Trap Sequence
+[#trap]
+----
+slli x0, x0, 0x1f   # 0x01f01013   Entry NOP
+ebreak              # 0x00100073   Break to debugger
+srai x0, x0, 7      # 0x40705013   NOP encoding the semihosting call number 7
+----
+
+These three instructions must be 32-bit-wide instructions, they may not be
+compressed 16-bit instructions. This same sequence is used on all RISC-V
+architectures. If paging is in use in the current mode, this sequence must
+not cross a page boundary as the semihosting system must be able to check
+for the semihosting sequence without needing data from potentially missing
+pages. The <<function>> shows how this can be done by placing the sequence
+in a separate function and aligning that to prevent that from spanning a
+page boundary.
+
+.RISC-V Semihosting Trap Function
+[#function]
+----
+        .option norvc
+        .text
+        .balign 16
+        .global sys_semihost
+        .type sys_semihost @function
+sys_semihost:
+        slli zero, zero, 0x1f
+        ebreak
+        srai zero, zero, 0x7
+        ret
+----
+
+=== Semihosting Parameters
+
+The type of semihosting operation and it's parameter are specified using
+general purpose registers. The <<register>> shows the specific registers
+that are used, and the size of the fields in the data block, which depend
+on whether the caller is 32-bit or 64-bit.
+
+.RISC-V Registers and field size
+[#register]
+[cols="3,^1,^1"]
+|===
+|                                   | 32-bit | 64-bit
+| OPERATION NUMBER REGISTER         |  A0    |   A0  
+| PARAMETER REGISTER                |  A1    |   A1  
+| RETURN REGISTER                   |  A0    |   A0  
+| Data block field size             | 32 bits| 64 bits
+|===
+
+=== Semihosting Execution Environment
+
+Any configuration required to support semihosting on RISC-V systems must be
+defined by the execution environment.  Of particular interest is the RISC-V
+external debug specification, which allows M-mode (and optionally S/U modes)
+`ebreak` instructions to be treated as semihosting traps.

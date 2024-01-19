@@ -8,4 +8,8 @@ functions. This allows for diagnostics, interaction and measurement of
 a target system without requiring significant infrastructure to exist
 in that target environment.
 
-
+The RISC-V semihosting borrows from the design of other publicly
+available and open source semihosting mechanisms to minimize the
+development effort required. This specification only defines the
+binary interface between RISC-V software and the system hosting
+the debugger or simulator.

@@ -15,8 +15,8 @@
 DOCKER_RUN := docker run --rm -v ${PWD}:/build -w /build \
 riscvintl/riscv-docs-base-container-image:latest
 
-HEADER_SOURCE := header.adoc
-PDF_RESULT := semihosting.pdf
+HEADER_SOURCE := riscv-semihosting.adoc
+PDF_RESULT := riscv-semihosting.pdf
 
 ASCIIDOCTOR_PDF := asciidoctor-pdf
 OPTIONS := --trace \
