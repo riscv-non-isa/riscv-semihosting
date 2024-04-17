@@ -1,10 +1,9 @@
 = RISC-V Semihosting
-Krste Asanovic <krste@sifive.com>; Palmer Dabbelt <palmer@dabbelt.com>; Liviu Ionescu <ilg@livius.net>; Keith Packard <keith.packard@sifive.com>; Megan Wachs <megan@sifive.com>
-:docgroup: RISC-V Extension
+:docgroup: RISC-V Non-ISA Specification
 :description: Semihosting
 :company: RISC-V.org
-:revdate: 4/2020
-:revnumber: 0.2
+:revdate: 17th April 2024
+:revnumber: 0.3
 :revremark: This document is under development. Expect potential changes.
 :revinfo:
 :url-riscv: http://riscv.org
