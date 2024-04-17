@@ -19,7 +19,7 @@ Krste Asanovic <krste@sifive.com>; Palmer Dabbelt <palmer@dabbelt.com>; Liviu Io
 :reproducible:
 //:WaveDromEditorApp: app/wavedrom-editor.app
 :imagesoutdir: docs-resources/images
-:bibtex-file: example.bib
+:bibtex-file: src/bibliography.bib
 :bibtex-order: alphabetical
 :bibtex-style: apa
 :icons: font
@@ -55,13 +55,13 @@ https://creativecommons.org/licenses/by-sa/4.0/.
 Copyright 2024 by RISC-V International.
 
 [preface]
-include::contributors.adoc[]
+include::src/contributors.adoc[]
 
-include::intro.adoc[]
+include::src/intro.adoc[]
 
-include::binary-interface.adoc[]
+include::src/binary-interface.adoc[]
 
 // The index must precede the bibliography
-include::index.adoc[]
+include::src/index.adoc[]
 
-include::bibliography.adoc[]
+include::src/bibliography.adoc[]
