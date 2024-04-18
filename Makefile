@@ -15,7 +15,6 @@
 DOCKER_RUN := docker run --rm -v ${PWD}:/build -w /build \
 riscvintl/riscv-docs-base-container-image:latest
 
-MAIN_SOURCE := riscv-semihosting.adoc
 DEPS += src/bibliography.bib
 DEPS += src/contributors.adoc
 DEPS += src/intro.adoc
@@ -23,7 +22,7 @@ DEPS += src/binary-interface.adoc
 DEPS += src/index.adoc
 DEPS += src/bibliography.adoc
 
-PDF_RESULT := riscv-semihosting.pdf
+TARGETS += riscv-semihosting.pdf
 
 ASCIIDOCTOR_PDF := asciidoctor-pdf
 OPTIONS := --trace \
@@ -38,23 +37,34 @@ REQUIRES := --require=asciidoctor-bibtex \
 
 .PHONY: all clean
 
-all:
+all: $(TARGETS)
+
+# Preserve all intermediate files
+.SECONDARY:
+
+images/%.png: src/%.ditaa
+	mkdir -p `dirname $@`
+	ditaa $< $@
+
+%.pdf: %.adoc $(DEPS)
 	@echo "Checking if Docker is available..."
 	@if command -v docker >/dev/null 2>&1 ; then \
 		echo "Docker is available, building inside Docker container..."; \
-		$(MAKE) build-container/$(PDF_RESULT); \
+		$(MAKE) build-container/$@; \
+		cp -f build-container/$@ $@; \
 	else \
 		echo "Docker is not available, building without Docker..."; \
-		$(MAKE) build-no-container/$(PDF_RESULT); \
+		$(MAKE) build-no-container/$@; \
+		cp -f build-no-container/$@ $@; \
 	fi
 
-build-container/%.pdf: $(MAIN_SOURCE) $(DEPS)
+build-container/%.pdf: %.adoc $(DEPS)
 	@echo "Starting build inside Docker container..."
 	@mkdir -p `dirname $@`
 	$(DOCKER_RUN) /bin/sh -c "$(ASCIIDOCTOR_PDF) $(OPTIONS) $(REQUIRES) --out-file=$@ $<"
 	@echo "Build completed successfully inside Docker container."
 
-build-no-container/%.pdf: $(MAIN_SOURCE) $(DEPS)
+build-no-container/%.pdf: %.adoc $(DEPS)
 	@echo "Starting build..."
 	@mkdir -p `dirname $@`
 	$(ASCIIDOCTOR_PDF) $(OPTIONS) $(REQUIRES) --out-file=$@ $<
@@ -62,5 +72,5 @@ build-no-container/%.pdf: $(MAIN_SOURCE) $(DEPS)
 
 clean:
 	@echo "Cleaning up generated files..."
-	rm -rf build-container build-no-container
+	rm -rf build-container build-no-container $(TARGETS)
 	@echo "Cleanup completed."
