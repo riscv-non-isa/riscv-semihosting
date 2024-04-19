@@ -2,7 +2,7 @@
 :docgroup: RISC-V Non-ISA Specification
 :description: Semihosting
 :company: RISC-V.org
-:revdate: 17th April 2024
+:revdate: 19th April 2024
 :revnumber: 0.3
 :revremark: This document is under development. Expect potential changes.
 :revinfo:
