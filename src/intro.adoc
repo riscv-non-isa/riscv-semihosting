@@ -8,8 +8,18 @@ functions. This allows for diagnostics, interaction and measurement of
 a target system without requiring significant infrastructure to exist
 in that target environment.
 
-The RISC-V semihosting borrows from the design of other publicly
-available and open source semihosting mechanisms to minimize the
-development effort required. This specification only defines the
-binary interface between RISC-V software and the system hosting
-the debugger or simulator.
+The RISC-V semihosting specification adapts the design of publicly available
+and open source semihosting specification cite:[ARMSemihostingRef] to minimize
+the development effort. Only the mechanism of invoke a semihosting service
+(aka semihosting binary interface) is architecture specific whereas all defined
+semihosting services cite:[ARMSemihostingRef] are architecture independent and
+resemble system calls of an unix-style operating system. The <<fig_intro1>>
+below shows an architecture independent high-level view of semihosting usage.
+
+This specification only defines the semihosting binary interface for RISC-V
+platforms and all other aspects of semihosting are defined by the open source
+semihosting specification cite:[ARMSemihostingRef].
+
+[#fig_intro1]
+.Generic Semihosting Usage Flow
+image::images/intro-image1.png[width=820,height=546]

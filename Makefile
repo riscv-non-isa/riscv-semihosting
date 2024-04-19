@@ -15,6 +15,7 @@
 DOCKER_RUN := docker run --rm -v ${PWD}:/build -w /build \
 riscvintl/riscv-docs-base-container-image:latest
 
+DEPS += images/intro-image1.png
 DEPS += src/bibliography.bib
 DEPS += src/contributors.adoc
 DEPS += src/intro.adoc

@@ -11,8 +11,7 @@
 :preface-title: Preamble
 :colophon:
 :appendix-caption: Appendix
-:imagesdir: docs-resources/images
-:title-logo-image: image:risc-v_logo.png[pdfwidth=3.25in,align=center]
+:title-logo-image: image:docs-resources/images/risc-v_logo.png[pdfwidth=3.25in,align=center]
 // Settings:
 :experimental:
 :reproducible:
@@ -20,7 +19,7 @@
 :imagesoutdir: docs-resources/images
 :bibtex-file: src/bibliography.bib
 :bibtex-order: alphabetical
-:bibtex-style: apa
+:bibtex-style: ieee
 :icons: font
 :lang: en
 :listing-caption: Listing
