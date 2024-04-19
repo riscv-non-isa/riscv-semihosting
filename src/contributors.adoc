@@ -8,3 +8,4 @@ This RISC-V specification has been contributed to directly or indirectly by:
 * Liviu Ionescu <ilg@livius.net>
 * Keith Packard <keith.packard@sifive.com>
 * Megan Wachs <megan@sifive.com>
+* Anup Patel <apatel@ventanamicro.com>
