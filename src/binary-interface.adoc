@@ -62,10 +62,3 @@ on whether the caller is 32-bit or 64-bit.
 | RETURN REGISTER                   |  A0    |   A0  
 | Data block field size             | 32 bits| 64 bits
 |===
-
-=== Semihosting Execution Environment
-
-Any configuration required to support semihosting on RISC-V systems must be
-defined by the execution environment.  Of particular interest is the RISC-V
-external debug specification, which allows M-mode (and optionally S/U modes)
-`ebreak` instructions to be treated as semihosting traps.
