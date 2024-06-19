@@ -47,7 +47,7 @@ sys_semihost:
 
 === Semihosting Parameters
 
-The type of semihosting operation and it's parameter are specified using
+The type of semihosting operation and its parameter are specified using
 general purpose registers. The <<register>> shows the specific registers
 that are used, and the size of the fields in the data block, which depend
 on whether the caller is 32-bit or 64-bit.
