@@ -8,7 +8,7 @@ functions. This allows for diagnostics, interaction and measurement of
 a target system without requiring significant infrastructure to exist
 in that target environment.
 
-The RISC-V semihosting specification adapts the design of publicly available
+The RISC-V semihosting specification adapts the design of the publicly available
 and open source semihosting specification cite:[ARMSemihostingRef] to minimize
 the development effort. Only the mechanism of invoke a semihosting service
 (aka semihosting binary interface) is architecture specific whereas all defined
