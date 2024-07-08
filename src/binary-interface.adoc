@@ -18,7 +18,7 @@ Semihosting operation.
 ----
 slli x0, x0, 0x1f   # 0x01f01013   Entry NOP
 ebreak              # 0x00100073   Break to debugger
-srai x0, x0, 7      # 0x40705013   NOP encoding the semihosting call number 7
+srai x0, x0, 7      # 0x40705013   NOP encoding the semihosting call #7
 ----
 
 These three instructions must be 32-bit-wide instructions, they may not be
