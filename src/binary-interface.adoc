@@ -1,20 +1,20 @@
 == RISC-V Semihosting Binary Interface
 
-The RISC-V semihosting binary interface consist of a trap instruction
-sequence and mechanism to pass parameters which are defined by the
+The RISC-V semihosting binary interface consist of a breakpoint instruction
+sequence and a mechanism to pass parameters which are defined by the
 following sub-sections.
 
-=== Semihosting Trap Instruction Sequence
+=== Semihosting Breakpoint Instruction Sequence
 
 Semihosting operations are requested using a sequence of instructions
 including `ebreak`. Because the RISC-V base ISA does not provide more than
 one `ebreak` instruction, RISC-V semihosting uses a special sequence of
 instructions to distinguish a semihosting `ebreak` from a debugger inserted
-`ebreak`. The <<trap>> shows the instruction sequence used to invoke a
-Semihosting operation.
+`ebreak`. The <<breakpoint_insns>> shows the instruction sequence used to
+invoke a semihosting operation.
 
-.RISC-V Semihosting Trap Sequence
-[#trap]
+.RISC-V Semihosting Breakpoint Sequence
+[#breakpoint_insns]
 ----
 slli x0, x0, 0x1f   # 0x01f01013   Entry NOP
 ebreak              # 0x00100073   Break to debugger
@@ -27,10 +27,10 @@ architectures. If paging is in use in the current mode, this sequence must
 not cross a page boundary as the semihosting system must be able to check
 for the semihosting sequence without needing data from potentially missing
 pages. The <<function>> shows how this can be done by placing the sequence
-in a separate function and aligning that to prevent that from spanning a
-page boundary.
+in a separate assembly function and aligning that to prevent that from
+spanning a page boundary.
 
-.RISC-V Semihosting Trap Function
+.RISC-V Semihosting Assembly Reference Function
 [#function]
 ----
         .option norvc
