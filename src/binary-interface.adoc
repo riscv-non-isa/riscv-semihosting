@@ -63,9 +63,9 @@ on whether the caller is 32-bit or 64-bit or 128-bit.
 [#register]
 [cols="3,^1,^1,^1"]
 |===
-|                                   | 32-bit | 64-bit | 128-bit
-| OPERATION NUMBER REGISTER         |  A0    |   A0   |  A0
-| PARAMETER REGISTER                |  A1    |   A1   |  A1
-| RETURN REGISTER                   |  A0    |   A0   |  A0
-| Data block field size             | 32 bits| 64 bits| 128 bits
+|                                   | *32-bit* | *64-bit* | *128-bit*
+| *OPERATION NUMBER REGISTER*       |   `A0`   |   `A0`   |   `A0`
+| *PARAMETER REGISTER*              |   `A1`   |   `A1`   |   `A1`
+| *RETURN REGISTER*                 |   `A0`   |   `A0`   |   `A0`
+| *DATA BLOCK FIELD SIZE (BITS)*    |   `32`   |   `64`   |   `128`
 |===
