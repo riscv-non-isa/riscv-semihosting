@@ -22,9 +22,9 @@ srai x0, x0, 7      # 0x40705013   Exit NOP
 ----
 
 NOTE: The shift values in the `Entry NOP` and `Exit NOP` instructions above
-specify the open source semihosting specification cite:[ARMSemihostingRef].
-Other shift values of the `Entry NOP` and `Exit NOP` instructions are available
-for custom use by RISC-V platforms.
+specify the semihosting specification cite:[ARMSemihostingRef]. Other shift
+values of the `Entry NOP` and `Exit NOP` instructions are available for
+custom use by RISC-V platforms.
 
 These three instructions must be 32-bit-wide instructions, they may not be
 compressed 16-bit instructions. This same sequence is used on all RISC-V
