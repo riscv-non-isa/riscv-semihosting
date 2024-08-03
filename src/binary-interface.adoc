@@ -21,14 +21,13 @@ ebreak              # 0x00100073   Break to debugger
 srai x0, x0, 7      # 0x40705013   Exit NOP
 ----
 
-These three instructions must be 32-bit-wide instructions, they may not be
-compressed 16-bit instructions. This same sequence is used on all RISC-V
-architectures. If paging is in use in the current mode, this sequence must
-not cross a page boundary as the semihosting system must be able to check
-for the semihosting sequence without needing data from potentially missing
-pages. The <<function>> shows how this can be done by placing the sequence
-in a separate assembly function and aligning that to prevent that from
-spanning a page boundary.
+These three instructions must be 32-bit wide instructions. This same sequence
+is used on all RISC-V architectures. If paging is in use in the current mode,
+this sequence must not cross a page boundary as the semihosting system must
+be able to check for the semihosting sequence without needing data from
+potentially missing pages. The <<function>> shows how this can be done by
+placing the sequence in a separate assembly function and aligning that to
+prevent that from spanning a page boundary.
 
 .RISC-V Semihosting Assembly Reference Function
 [#function]
