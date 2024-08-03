@@ -44,22 +44,10 @@ sys_semihost:
         ret
 ----
 
-<<<
-
 === Semihosting Parameters
 
-The type of semihosting operation and its parameter are specified using
-general purpose registers. The <<register>> shows the specific registers
-that are used, and the size of the fields in the data block, which depend
-on whether the caller is 32-bit or 64-bit or 128-bit.
-
-.RISC-V Registers and field size
-[#register]
-[cols="3,^1,^1,^1"]
-|===
-|                                   | *32-bit* | *64-bit* | *128-bit*
-| *OPERATION NUMBER REGISTER*       |   `A0`   |   `A0`   |   `A0`
-| *PARAMETER REGISTER*              |   `A1`   |   `A1`   |   `A1`
-| *RETURN REGISTER*                 |   `A0`   |   `A0`   |   `A0`
-| *DATA BLOCK FIELD SIZE (BITS)*    |   `32`   |   `64`   |   `128`
-|===
+The type of semihosting operation and its parameters are specified using
+general purpose registers. The OPERATION NUMBER is specified in the `a0`
+register and the PARAMETER is specified in the `a1` register whereas the
+RETURN VALUE is available in the `a0` register. All registers and data block
+fields are XLEN wide.
