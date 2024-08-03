@@ -22,19 +22,18 @@ srai x0, x0, 7      # 0x40705013   Exit NOP
 ----
 
 These three instructions must be 32-bit wide instructions. This same sequence
-is used on all RISC-V architectures. If paging is in use in the current mode,
-this sequence must not cross a page boundary as the semihosting system must
-be able to check for the semihosting sequence without needing data from
-potentially missing pages. The <<function>> shows how this can be done by
-placing the sequence in a separate assembly function and aligning that to
-prevent that from spanning a page boundary.
+is used on all RISC-V architectures. If address translation and protection is
+enabled for the semihosting caller then the semihosting instruction sequence
+and data passed via memory must be paged in else the behavior of the semihosting
+call is UNSPECIFIED. The <<function>> shows an example assembly function to invoke
+a semihosting service which can be used by callers with address translation and
+protection disabled.
 
 .RISC-V Semihosting Assembly Reference Function
 [#function]
 ----
         .option norvc
         .text
-        .balign 16
         .global sys_semihost
         .type sys_semihost @function
 sys_semihost:
