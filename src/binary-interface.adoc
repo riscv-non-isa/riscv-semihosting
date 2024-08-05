@@ -31,6 +31,6 @@ call is UNSPECIFIED.
 
 The type of semihosting operation and its parameters are specified using
 general purpose registers. The OPERATION NUMBER is specified in the `a0`
-register and the PARAMETER is specified in the `a1` register whereas the
+register, and the PARAMETER is specified in the `a1` register, whereas the
 RETURN VALUE is available in the `a0` register. All registers and data block
 fields are XLEN wide.
