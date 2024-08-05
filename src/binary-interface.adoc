@@ -7,10 +7,10 @@ following sub-sections.
 === Semihosting Breakpoint Instruction Sequence
 
 Semihosting operations are requested using a sequence of instructions
-including `ebreak`. Because the RISC-V base ISA does not provide more than
-one `ebreak` instruction, RISC-V semihosting uses a special sequence of
-instructions to distinguish a semihosting `ebreak` from a debugger inserted
-`ebreak`. The <<breakpoint_insns>> shows the instruction sequence used to
+including `EBREAK`. Because the RISC-V base ISA does not provide more than
+one `EBREAK` instruction, RISC-V semihosting uses a special sequence of
+instructions to distinguish a semihosting `EBREAK` from a debugger inserted
+`EBREAK`. The <<breakpoint_insns>> shows the instruction sequence used to
 invoke a semihosting operation.
 
 .RISC-V Semihosting Breakpoint Sequence
