@@ -21,8 +21,8 @@ ebreak              # 0x00100073   Break to debugger
 srai x0, x0, 7      # 0x40705013   Exit NOP
 ----
 
-These three instructions must be 32-bit wide instructions. This same sequence
-is used on all RISC-V architectures. If address translation and protection is
+These three instructions must be 32-bit wide instructions. This sequence is
+applicable to all RISC-V base ISAs. If address translation and protection is
 enabled for the semihosting caller then the semihosting instruction sequence
 and data passed via memory must be paged in else the behavior of the semihosting
 call is UNSPECIFIED.
