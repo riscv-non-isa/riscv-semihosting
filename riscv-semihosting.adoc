@@ -2,9 +2,9 @@
 :docgroup: RISC-V Non-ISA Specification
 :description: Semihosting
 :company: RISC-V.org
-:revdate: 14th August 2024
-:revnumber: 0.6
-:revremark: This document is under development. Expect potential changes.
+:revdate: 25th September 2024
+:revnumber: 1.0-rc1
+:revremark: This document is Frozen.
 :revinfo:
 :url-riscv: http://riscv.org
 :doctype: book
@@ -37,11 +37,12 @@ endif::[]
 :xrefstyle: short
 
 [WARNING]
-.This document is in the link:http://riscv.org/spec-state[Development state]
+.This document is in the link:http://riscv.org/spec-state[Frozen state]
 ====
-Expect potential changes. This draft specification is likely to evolve before
-it is accepted as a standard. Implementations based on this draft
-may not conform to the future standard.
+Change is extremely unlikely. A high threshold will be used, and a change
+will only occur because of some truly critical issue being identified during
+the public review cycle. Any other desired or needed changes can be the subject
+of a follow-on new extension.
 ====
 
 [preface]
