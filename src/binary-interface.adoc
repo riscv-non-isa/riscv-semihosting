@@ -27,6 +27,15 @@ enabled for the semihosting caller then the semihosting instruction sequence
 and data passed via memory must be paged in else the behavior of the semihosting
 call is UNSPECIFIED.
 
+NOTE: The `SLLI`, `EBREAK`, and `SRAI` instructions are part of the ratified
+RV32E, RV32I, RV64E and RV64I (aka Base Integer Instruction Set) specifications
+cite:[RISCVUnprivRef] hence these instructions are present on almost all RISC-V
+platforms.
+
+NOTE: The `SLLI` and `SRAI` instruction based NOPs which serve as semihosting
+marker have been randomly selected from the Base Integer Instruction Set since
+these are designated for custom use and unlikely to appear in real life code.
+
 === Semihosting Parameters
 
 The type of semihosting operation and its parameters are specified using
