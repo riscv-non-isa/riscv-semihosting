@@ -2,8 +2,8 @@
 :docgroup: RISC-V Non-ISA Specification
 :description: Semihosting
 :company: RISC-V.org
-:revdate: 25th September 2024
-:revnumber: 1.0-rc1
+:revdate: 8th November 2024
+:revnumber: 1.0-rc2
 :revremark: This document is Frozen.
 :revinfo:
 :url-riscv: http://riscv.org
