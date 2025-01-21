@@ -15,7 +15,6 @@
 DOCKER_RUN := docker run --rm -v ${PWD}:/build -w /build \
 riscvintl/riscv-docs-base-container-image:latest
 
-DEPS += images/intro-image1.png
 DEPS += src/bibliography.bib
 DEPS += src/contributors.adoc
 DEPS += src/intro.adoc
@@ -24,6 +23,8 @@ DEPS += src/index.adoc
 DEPS += src/bibliography.adoc
 
 TARGETS += riscv-semihosting.pdf
+
+IMAGES += images/intro-image1.png
 
 ASCIIDOCTOR_PDF := asciidoctor-pdf
 OPTIONS := --trace \
@@ -36,16 +37,17 @@ REQUIRES := --require=asciidoctor-bibtex \
             --require=asciidoctor-diagram \
             --require=asciidoctor-mathematical
 
-.PHONY: all clean
+.PHONY: all images clean
 
 all: $(TARGETS)
+images: $(IMAGES)
 
 # Preserve all intermediate files
 .SECONDARY:
 
 images/%.png: src/%.ditaa
 	mkdir -p `dirname $@`
-	ditaa $< $@
+	java -jar `which ditaa` $< $@
 
 %.pdf: %.adoc $(DEPS)
 	@echo "Checking if Docker is available..."
