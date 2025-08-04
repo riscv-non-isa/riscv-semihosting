@@ -1,4 +1,4 @@
 .Semihosting
 * xref:contributors.adoc[Contributors]
 * xref:intro.adoc[Introduction]
-* xref:binary-interfaceadoc[Semihosting Binary Interface]
+* xref:binary-interface.adoc[Semihosting Binary Interface]
