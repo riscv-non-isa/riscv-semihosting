@@ -1,3 +1,7 @@
-= Semihosting
+= RISC-V Semihosting
 
-Semihosting landing page
+
+image:docs-resources/images/risc-v_logo.png[pdfwidth=3.25in,align=center]
+
+
+Version 1.0, 21st February 2025: This document is Ratified.
