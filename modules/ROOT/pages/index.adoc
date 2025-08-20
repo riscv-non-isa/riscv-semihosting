@@ -5,7 +5,7 @@ image:risc-v_logo.svg[]
 = RISC-V Semihosting
 
 
-
+This documentation defines the semihosting binary interface for RISC-V platforms.
 
 
 Version 1.0, 21st February 2025: This document is Ratified.
