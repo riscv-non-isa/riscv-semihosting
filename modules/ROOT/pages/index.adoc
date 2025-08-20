@@ -1,7 +1,7 @@
 = RISC-V Semihosting
 
 
-image:risc-v_logo.svg
+image:risc-v_logo.svg[]
 
 
 Version 1.0, 21st February 2025: This document is Ratified.
