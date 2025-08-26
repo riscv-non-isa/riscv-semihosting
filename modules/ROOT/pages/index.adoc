@@ -1,8 +1,8 @@
-image:risc-v_logo.svg[]
+image::risc-v_logo.svg[]
 
 
 
-= RISC-V Semihosting
+== RISC-V Semihosting
 
 
 This documentation defines the semihosting binary interface for RISC-V platforms.
