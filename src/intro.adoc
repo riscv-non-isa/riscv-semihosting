@@ -24,4 +24,4 @@ defined by the ARM semihosting specification cite:[ARMSemihostingRef].
 
 [#fig_intro1]
 .Generic Semihosting Usage Flow
-image::images/intro-image1.png[width=820,height=546]
+image::intro-image1.png[width=820,height=546]
