@@ -1,5 +1,5 @@
 name: semihost
-title: semihosting
+title: RISC-V Semihosting
 version: v1.0
 nav:
 - modules/ROOT/nav.adoc

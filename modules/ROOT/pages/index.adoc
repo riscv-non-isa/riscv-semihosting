@@ -1,7 +1,6 @@
 image::risc-v_logo.svg[]
 
 
-
 == RISC-V Semihosting
 
 

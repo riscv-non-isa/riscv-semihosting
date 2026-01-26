@@ -1,4 +1,5 @@
 .RISC-V Semihosting
+* xref:index.adoc[RISC-V Semihosting]
 * xref:contributors.adoc[Contributors]
 * xref:intro.adoc[Introduction]
 * xref:binary-interface.adoc[Semihosting Binary Interface]
