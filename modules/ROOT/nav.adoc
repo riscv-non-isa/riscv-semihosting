@@ -1,5 +1,7 @@
 .RISC-V Semihosting
 * xref:index.adoc[RISC-V Semihosting]
+* xref:copyright.adoc[Copyright and License]
 * xref:contributors.adoc[Contributors]
 * xref:intro.adoc[Introduction]
 * xref:binary-interface.adoc[Semihosting Binary Interface]
+* xref:bibliography.adoc[Bibliography]
