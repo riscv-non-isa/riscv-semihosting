@@ -6,5 +6,6 @@ nav:
 
 asciidoc:
   attributes:
-    page-pdf_url: https://github.com/riscv/docs.riscv.org/blob/main/static/pdf/riscv-semihosting.pdf
+    page-pdf_url: _attachments/riscv-semihosting.pdf
+    more_details_url: https://riscv.atlassian.net/wiki/external/YjY0ZDBkZjg2M2E4NDYxM2FmMmMwMWM0YTgxZjRmYTc    
     page-group: platform-software
