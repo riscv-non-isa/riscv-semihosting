@@ -10,4 +10,5 @@ asciidoc:
     page-card-description: 'Semihosting interface for development and debugging.'
     page-release-date: 'February 2025'
     page-pdf_url: _attachments/riscv-semihosting.pdf
-    more_details_url: https://riscv.atlassian.net/wiki/external/YjY0ZDBkZjg2M2E4NDYxM2FmMmMwMWM0YTgxZjRmYTc    
+    more_details_url: https://riscv.atlassian.net/wiki/external/YjY0ZDBkZjg2M2E4NDYxM2FmMmMwMWM0YTgxZjRmYTc
+    asamBibliography: 'ROOT:pages/bibliography.bib'
