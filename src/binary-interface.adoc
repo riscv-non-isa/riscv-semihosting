@@ -21,11 +21,16 @@ ebreak              # 0x00100073   Break to debugger
 srai x0, x0, 7      # 0x40705013   Exit NOP
 ----
 
-These three instructions must be 32-bit wide instructions. This sequence is
-applicable to all RISC-V base ISAs. If address translation and protection is
+These three instructions must be 32-bit wide instructions and must appear in
+sequence with no other instructions in-between. This sequence is
+applicable to all RISC-V base ISAs. All three instructions must be present
+in memory when the `EBREAK` is executed so that the debugger can inspect
+the instructions in memory before and after the `EBREAK` to verify
+that this is a semihosting call. If address translation and protection is
 enabled for the semihosting caller then the semihosting instruction sequence
-and data passed via memory must be paged in else the behavior of the semihosting
-call is UNSPECIFIED.
+and data passed via memory must be paged in to memory, otherwise the behavior of
+the semihosting call is UNSPECIFIED. The simplest way to achieve this is
+by aligning the sequence to 16 bytes.
 
 NOTE: The `SLLI`, `EBREAK`, and `SRAI` instructions are part of the ratified
 RV32E, RV32I, RV64E and RV64I (aka Base Integer Instruction Set) specifications
