@@ -6,10 +6,6 @@ image::common::risc-v_logo.svg[id="riscvlogo"xs,alt="RISCV"]
 [.space-below]
 == RISC-V Semihosting
 
-
-This documentation defines the semihosting binary interface for RISC-V platforms.
-
-
 Version 1.0, 21st February 2025: This document is Ratified.
 
 [WARNING]
